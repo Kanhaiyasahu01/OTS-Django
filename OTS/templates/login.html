@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+
+{% block title %} OTS - Login {% endblock %}
+
+{% block top %}
+    <a class="btn btn-secondary" style="color: white;" href="{% url 'OTS:registrationForm' %}">Signup</a>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">Login</div>
+                    <div class="card-body">
+                        {% if loginError %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ loginError }}
+                            </div>
+                        {% endif %}
+                        <form action="{% url 'OTS:login' %}" method="POST" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" name="username" class="form-control" required>
+                                <div class="invalid-feedback">Please enter your username.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" required>
+                                <div class="invalid-feedback">Please enter your password.</div>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button type="reset" class="btn btn-secondary">Clear</button>
+                            </div>
+                        </form>
+                        <p>New User? <a href="{% url 'OTS:registrationForm' %}">Click Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

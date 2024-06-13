@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block title %} OTS - Candidate Result History {% endblock %}
+
+{% block top %}
+    <div class="d-flex justify-content-between align-items-center">
+        <a href="{% url 'OTS:home' %}" class="btn btn-secondary">Home</a>
+        <a href="{% url 'OTS:logout' %}" class="btn btn-danger">Logout</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Your Report Card</h1>
+        <p>Hi <span class="text-primary">{{candidate.name}}</span>, 
+            you have attempted a total of <span class="text-primary">{{candidate.test_attempted}}</span> tests.
+        </p>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Attempt</th>
+                        <th>Right</th>
+                        <th>Wrong</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {% for r in results %}
+                    <tr>
+                        <td style="height: 50px;">{{r.date}}</td>
+                        <td style="height: 50px;">{{r.time}}</td>
+                        <td style="height: 50px;">{{r.attempt}}</td>
+                        <td style="height: 50px;">{{r.right}}</td>
+                        <td style="height: 50px;">{{r.wrong}}</td>
+                        <td style="height: 50px;">{{r.points}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

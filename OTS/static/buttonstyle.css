@@ -1,0 +1,34 @@
+.button-link{
+    width: 100%;
+    height: 100%;
+    background-color: #F64C72;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
+    text-align: center;
+
+}
+.button-link a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+
+}
+.test-paper-section {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light gray background color */
+    margin-bottom: 20px; /* Add margin to the bottom */
+}
+
+.test-result-section {
+    padding: 20px;
+    background-color: #e9ecef; /* Lighter gray background color */
+    height: calc(100vh - 25rem); /* Set height to 100% viewport height minus header and footer height */
+    margin-bottom: 20px; /* Add margin to the bottom */
+    overflow-y: auto; /* Add scroll if content exceeds viewport height */
+}
+
+.result-padding{
+    padding-bottom: 5rem;
+}

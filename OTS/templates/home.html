@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+
+{% block title %} OTS - Candidate Home{% endblock %}
+
+{% block top %}
+    <a class="btn btn-secondary" href="{% url 'OTS:home' %}">Home</a>
+    <a class="btn btn-danger" href="{% url 'OTS:logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Welcome {{ request.session.name }}, to your home page</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="test-paper-section">
+                    <h2>Test Paper Section</h2>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=1">Test of 1 Question</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=3">Test of 3 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=5">Test of 5 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=10">Test of 10 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=15">Test of 15 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=20">Test of 20 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=25">Test of 25 Questions</a>
+                    </div>
+                    <div class="button-link">
+                        <a href="{% url 'OTS:testPaper' %}?n=30">Test of 30 Questions</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 ">
+                <div class="card test-result-section sticky-top result-padding">
+                    <div class="card-body">
+                        <h2 class="card-title">Test Result Section</h2>
+                        <div class="button-link d-flex align-items-center justify-content-center">
+                            <a href="{% url 'OTS:testHistory' %}?n=1">Test History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

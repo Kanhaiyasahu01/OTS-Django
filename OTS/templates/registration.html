@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block title %} OTS-Registration Status {% endblock %}
+
+{% block top %}
+    <div class="d-flex justify-content-end mb-4">
+        <a href="{% url 'OTS:registrationForm' %}" class="btn btn-primary me-2">Signup</a>
+        <a href="{% url 'OTS:login' %}" class="btn btn-secondary">Login</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        {% if userStatus == 1 %}
+            <div class="alert alert-warning text-center">
+                <h4>Sorry, Username already exists</h4>
+                <p>Please try with a different username.</p>
+                <a href="{% url 'OTS:registrationForm' %}" class="btn btn-warning mt-3">Back to Candidate Registration Form</a>
+            </div>
+        {% elif userStatus == 2 %}
+            <div class="alert alert-success text-center">
+                <h4>Congratulations!</h4>
+                <p>User created successfully.</p>
+                <a href="{% url 'OTS:login' %}" class="btn btn-success mt-3">Login</a>
+            </div>
+        {% elif userStatus == 3 %}
+            <div class="alert alert-danger text-center">
+                <h4>Oops! Improper Request</h4>
+                <p>Sorry, Username already exists, please try with a different username.</p>
+                <a href="{% url 'OTS:registrationForm' %}" class="btn btn-danger mt-3">Back to Candidate Registration Form</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block title %} Welcome to Online Testing System {% endblock %}
+
+{% block top %}
+    <div class="btn-group" role="group">
+        <a class="btn btn-secondary" href="{% url 'OTS:registrationForm' %}">Signup</a>
+        <a class="btn btn-danger" href="{% url 'OTS:login' %}">Login</a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid bg-gradient ">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">{{ block.super }}</div>
+
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Welcome to Online Testing System</h2>
+                        <p class="text-center mb-4 lead">Empower your learning with our innovative online testing platform. Experience a seamless and efficient way to assess your knowledge and skills.</p>
+                        <div class="btn-group d-flex justify-content-center mt-3" role="group">
+                            <a class="btn btn-lg btn-success me-3" href="{% url 'OTS:registrationForm' %}">Signup</a>
+                            <span class="text-muted align-self-center fw-bold">or</span>
+                            <a class="btn btn-lg btn-danger ms-3" href="{% url 'OTS:login' %}">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

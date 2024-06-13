@@ -1,0 +1,22 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header .nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header .nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+}
+.bg-gradient {
+    background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+}
